@@ -8,4 +8,5 @@ import java.sql.SQLException;
 public interface RegisterFormService {
     Connection getDBConnection() throws SQLException;
     boolean userRegister(User user) throws SQLException;
+    boolean isHaveUser(String email) throws SQLException;
 }

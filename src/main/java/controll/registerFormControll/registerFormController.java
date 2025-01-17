@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.scene.Cursor;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.fxml.FXML;
 import javafx.stage.Stage;
@@ -43,10 +44,13 @@ public class registerFormController implements RegisterFormService {
     void btnCancelOnAction(ActionEvent event) {
         stage.close();
         System.gc();
+
+
     }
 
     @FXML
     void btnRegisterOnAction(ActionEvent event) {
+        boolean Lc=true;
         if(txtUserName.getText().equals(""))lblErrorMessege.setText(lblErrorMessege.getText()+"Enter User Name \n");
         if (txtEmail.getText().equals(""))lblErrorMessege.setText(lblErrorMessege.getText()+"Enter Email \n");
 
@@ -56,27 +60,40 @@ public class registerFormController implements RegisterFormService {
             txtReEnterPassword.setText("");
         }
 
-        if ( !txtUserName.getText().equals("") && !txtEmail.getText().equals("") &&  !txtPassWord.getText().equals("") &&  !txtReEnterPassword.getText().equals("") && txtPassWord.getText().equals(txtReEnterPassword.getText())){
-            try {
-                boolean Lc=new RegisterControll().userRegister(new User(
-                        txtUserName.getText(),
-                        txtEmail.getText(),
-                        txtPassWord.getText()
-                ));
+        if (new RegisterControll().isHaveUser(txtEmail.getText())){
+            new Alert(Alert.AlertType.ERROR,"Email is Alrady Use").show();
+            txtEmail.setText("");
+            Lc=false;
+        }else {
+            if (Lc && !txtUserName.getText().equals("") && !txtEmail.getText().equals("") &&  !txtPassWord.getText().equals("") &&  !txtReEnterPassword.getText().equals("") && txtPassWord.getText().equals(txtReEnterPassword.getText())){
+                try {
+                    boolean is=new RegisterControll().userRegister(new User(
+                            txtUserName.getText(),
+                            txtEmail.getText(),
+                            txtPassWord.getText()
+                    ));
 
-                if (Lc){
-                    txtUserName.setText("");
-                    txtEmail.setText("");
-                    txtPassWord.setText("");
-                    txtReEnterPassword.setText("");
+                    if (is){
+
+                        new Alert(Alert.AlertType.CONFIRMATION,"Added Succus!").show();
+
+                        txtUserName.setText("");
+                        txtEmail.setText("");
+                        txtPassWord.setText("");
+                        txtReEnterPassword.setText("");
+                    }
+
+                } catch (SQLException e) {
+
+                }finally {
+                    System.gc();
                 }
-
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }finally {
-                System.gc();
+            }else {
+                new Alert(Alert.AlertType.ERROR,"try again ! ").show();
             }
         }
+
+
 
 
     }
@@ -94,6 +111,11 @@ public class registerFormController implements RegisterFormService {
 
     @Override
     public boolean userRegister(User user) throws SQLException {
+        return false;
+    }
+
+    @Override
+    public boolean isHaveUser(String email) {
         return false;
     }
 }

@@ -27,6 +27,7 @@ public class Starter extends Application {
         stage.setTitle("register form");
         stage.setTitle("Register Form");
         registerFormController.setStage(stage);
+
         stage.show();
 
 
