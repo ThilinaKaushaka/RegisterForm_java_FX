@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controll.registerFormControll.registerFormController">
+   <children>
+      <Rectangle fill="#10f8a3" height="400.0" stroke="TRANSPARENT" strokeType="INSIDE" width="126.0" />
+      <Rectangle fill="WHITE" height="94.0" layoutX="125.0" stroke="TRANSPARENT" strokeType="INSIDE" width="475.0" />
+      <Rectangle arcHeight="70.0" arcWidth="70.0" fill="#e4e4e4" height="313.0" layoutX="90.0" layoutY="84.0" stroke="TRANSPARENT" strokeType="INSIDE" width="510.0" />
+      <Rectangle fill="#e4e4e4" height="42.0" layoutX="90.0" layoutY="358.0" stroke="#ffffff00" strokeType="INSIDE" width="50.0" />
+      <Rectangle fill="#e4e4e4" height="42.0" layoutX="550.0" layoutY="84.0" stroke="#ffffff00" strokeType="INSIDE" width="50.0" />
+      <Rectangle fill="#e4e4e4" height="42.0" layoutX="550.0" layoutY="358.0" stroke="#ffffff00" strokeType="INSIDE" width="50.0" />
+      <Label layoutX="80.0" layoutY="21.0" text="Re" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="31.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnRegister" layoutX="484.0" layoutY="336.0" onAction="#btnRegisterOnAction" prefHeight="46.0" prefWidth="96.0" styleClass="btn" stylesheets="@../../style/style.css" text="Register" textAlignment="CENTER" textFill="#e1e1e1">
+         <font>
+            <Font name="Arial Black" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnCancel" layoutX="378.0" layoutY="336.0" onAction="#btnCancelOnAction" prefHeight="46.0" prefWidth="96.0" styleClass="btn" stylesheets="@../../style/style.css" text="Cancel" textAlignment="CENTER" textFill="#e1e1e1">
+         <font>
+            <Font name="Arial Black" size="16.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="125.0" layoutY="24.0" text="gister Form" textAlignment="CENTER" textFill="#10f8a3">
+         <font>
+            <Font name="Arial Black" size="31.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtUserName" layoutX="140.0" layoutY="114.0" prefHeight="25.0" prefWidth="195.0" promptText="User Name" />
+      <JFXTextField fx:id="txtEmail" layoutX="140.0" layoutY="164.0" prefHeight="25.0" prefWidth="195.0" promptText="Email" />
+      <JFXPasswordField fx:id="txtPassWord" layoutX="140.0" layoutY="214.0" prefHeight="25.0" prefWidth="195.0" promptText="Password" />
+      <JFXPasswordField fx:id="txtReEnterPassword" layoutX="140.0" layoutY="266.0" prefHeight="25.0" prefWidth="195.0" promptText="Re Enter Password" />
+      <Label fx:id="lblErrorMessege" layoutX="140.0" layoutY="309.0" prefHeight="74.0" prefWidth="230.0" textFill="RED" />
+   </children>
+</AnchorPane>
