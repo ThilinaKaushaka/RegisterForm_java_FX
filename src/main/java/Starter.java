@@ -23,7 +23,7 @@ public class Starter extends Application {
     public void start(Stage stage) throws Exception {
 
 
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("view/register_Form/User_Register_Form.fxml"))));
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("view/log in form/LogInForm.fxml"))));
         stage.setTitle("register form");
         stage.setTitle("Register Form");
         registerFormController.setStage(stage);

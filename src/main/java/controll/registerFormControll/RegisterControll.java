@@ -2,6 +2,7 @@ package controll.registerFormControll;
 
 import DBConnection.GetDBConnection;
 import model.User;
+import org.jasypt.util.text.BasicTextEncryptor;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -15,6 +16,12 @@ public class RegisterControll implements RegisterFormService{
 
     @Override
     public boolean userRegister(User user) throws SQLException {
+        String key="#D99Tbbn%dgfpklgdG";
+        BasicTextEncryptor basicTextEncryptor = new BasicTextEncryptor() ;
+        basicTextEncryptor.setPassword(key);
+
+
+
 
         String sql="Insert into users (username,email,password) Values(?,?,?)";
 
@@ -22,7 +29,7 @@ public class RegisterControll implements RegisterFormService{
 
         statement.setObject(1,user.getUserName());
         statement.setObject(2,user.getEmail().toLowerCase());
-        statement.setObject(3,user.getPassword());
+        statement.setObject(3,basicTextEncryptor.encrypt(user.getPassword()));
         return 0<statement.executeUpdate();
     }
 

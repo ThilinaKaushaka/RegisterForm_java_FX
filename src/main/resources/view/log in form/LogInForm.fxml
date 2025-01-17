@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="572.0" prefWidth="669.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controll.log_In_Form_Controll.LogInFormController">
+   <children>
+      <Rectangle fill="#20c66b" height="572.0" stroke="TRANSPARENT" strokeType="INSIDE" width="190.0" />
+      <JFXTextField fx:id="txtEmail" layoutX="359.0" layoutY="224.0" prefHeight="25.0" prefWidth="170.0" promptText="Email" />
+      <JFXPasswordField fx:id="txtPasword" layoutX="359.0" layoutY="271.0" prefHeight="25.0" prefWidth="170.0" promptText="PassWord" />
+      <Label layoutX="388.0" layoutY="155.0" text="LOG IN" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Black" size="29.0" />
+         </font>
+      </Label>
+      <Label layoutX="13.0" layoutY="209.0" text="THOGAKAGE" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="23.0" />
+         </font>
+      </Label>
+      <Hyperlink fx:id="lnkRegisterLink" layoutX="455.0" layoutY="325.0" onAction="#lnkRegisterLink" text="Register Now" textFill="#00eb0d" />
+      <Label layoutX="355.0" layoutY="328.0" text="are you new user ? " textFill="#0da82a" />
+      <JFXButton fx:id="btnLogIn" layoutX="400.0" layoutY="364.0" onAction="#btnLogInOnAction" style="-fx-background-color: #00eb0d;" text="Log In" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../image/icons8-log-in-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <Circle fill="WHITE" layoutX="99.0" layoutY="307.0" radius="62.0" stroke="WHITE" strokeType="INSIDE" />
+      <ImageView fitHeight="190.0" fitWidth="200.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../image/rb_2085.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

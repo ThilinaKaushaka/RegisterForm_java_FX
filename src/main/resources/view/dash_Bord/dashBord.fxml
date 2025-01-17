@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="573.0" prefWidth="846.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controll.dashBordControll.dashBordFormController">
+   <children>
+      <Rectangle fill="#009e76" height="573.0" stroke="TRANSPARENT" strokeType="INSIDE" width="147.0" />
+      <JFXButton fx:id="btnCustomerForm" layoutX="8.0" layoutY="14.0" onAction="#btnCustomerFormOnAction" prefHeight="36.0" prefWidth="131.0" styleClass="btn" stylesheets="@../../style/style.css" text="CUSTOMER FORM" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnItem" layoutX="8.0" layoutY="61.0" onAction="#btnItemOnAction" prefHeight="36.0" prefWidth="131.0" styleClass="btn" stylesheets="@../../style/style.css" text="ITEM" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnOrder" layoutX="8.0" layoutY="109.0" onAction="#btnOrderOnAction" prefHeight="36.0" prefWidth="131.0" styleClass="btn" stylesheets="@../../style/style.css" text="ORDER " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <AnchorPane fx:id="loadFormContent" layoutX="147.0" layoutY="-1.0" prefHeight="572.0" prefWidth="669.0" />
+      <JFXButton fx:id="btnRegisterNewUser" layoutX="8.0" layoutY="155.0" onAction="#btnRegisterNewUserOnAction" prefHeight="36.0" prefWidth="131.0" styleClass="btn" stylesheets="@../../style/style.css" text="Register New User" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

@@ -42,8 +42,10 @@ public class registerFormController implements RegisterFormService {
 
     @FXML
     void btnCancelOnAction(ActionEvent event) {
-        stage.close();
-        System.gc();
+        txtEmail.setText("");
+        txtEmail.setText("");
+        txtPassWord.setText("");
+        txtReEnterPassword.setText("");
 
 
     }
